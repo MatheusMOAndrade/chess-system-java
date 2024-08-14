@@ -1,8 +1,10 @@
 package chess;
 
-public class ChessException {
+public class ChessException extends RuntimeException {
     
-    public void ChessException(String msg) {
-        
+    private static final long serialVersionUID = 1L;
+
+    public ChessException(String msg) {
+        super(msg);
     }
 }
