@@ -87,8 +87,12 @@ public class ChessMatch {
         placeNewPiece('b', 6, new Rook(board, Color.WHITE));
     }
     
-    public boolean possibleMoves(ChessPosition sourcePosition) {
-        return true;
+    public boolean[][] possibleMoves(ChessPosition sourcePosition) {
+        
+        Position position = sourcePosition.toPosition();
+        validateSourcePosition(position);
+
+        return board.piece(position).possibleMoves();
     }
 
     public ChessPiece replacePromotedPiece(String type) {
